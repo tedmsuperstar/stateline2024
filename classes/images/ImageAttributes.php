@@ -18,7 +18,7 @@ class ImageAttributes {
 
 	public static function handleThumbnailHtml( $html, $post_id, $post_image_id ) {
         $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-        $html = preg_replace( "/<img /", "<img loading='lazy'", $html );
+       // TODO: conditional lazy loading. we're getting dinged for lazy-loading the LCP item $html = preg_replace( "/<img /", "<img loading='lazy'", $html );
         return $html;
     }
 

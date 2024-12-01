@@ -18,9 +18,9 @@ Text Domain: state-made-2024
     --listicle-content-width:800px;
     --article-list-font-size:24px;
     --article-list-line-height:28px;
-    --content-font-family:"Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --content-font-family: "Helvetica Neue", Arial, sans-serif;
     
-    --titles-font-family:"Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --titles-font-family:"Helvetica Neue", Arial, sans-serif;
     --functional-unit-font-size:13px;
     --content-font-size:18px;
     --content-line-height:26px;
@@ -44,6 +44,7 @@ body {
     overflow-x:hidden;
     min-height: 100vh;
     color:var(--content-text-color);
+    font-display: optional;
 }
 
 header {
