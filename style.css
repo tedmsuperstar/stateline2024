@@ -1,9 +1,9 @@
 /*
-Theme Name: State Made 2024
+Theme Name: State Line 2024
 Theme URI: http://legitimatebusinessmodel.com
 Author: Ted Metzger
 Version: 0.0.1
-Text Domain: state-made-2024
+Text Domain: state-line-2024
 
 */
 
@@ -15,11 +15,13 @@ Text Domain: state-made-2024
     --content-padding:18px;
     --content-gap:18px;
     --content-border: 1px solid rgb(220, 220, 220);
+    --location-color:#999;
+    --price-color:green;
+    --product-content-width:800px;
     --listicle-content-width:800px;
     --article-list-font-size:24px;
     --article-list-line-height:28px;
     --content-font-family: "Helvetica Neue", Arial, sans-serif;
-    
     --titles-font-family:"Helvetica Neue", Arial, sans-serif;
     --functional-unit-font-size:13px;
     --content-font-size:18px;
@@ -59,7 +61,7 @@ header a.logo, footer a.logo {
     color:var( --logo-color);
     font-weight:700;
     font-size:24px;
-    width:95px;
+    width:80px;
     display: block;
     line-height: 24px;;
 }
@@ -68,6 +70,7 @@ header .menu, header .nav-chrome, footer .menu , footer .nav-chrome {
     margin:auto;
     max-width: 1400px;;
     display: flex;
+    gap:10px;
     
  } 
 
@@ -83,14 +86,59 @@ header .menu, header .nav-chrome, footer .menu , footer .nav-chrome {
 header .menu, header .nav-chrome {
   margin-top: 5px;
 }
-header #headerSearchBox {
+header #portalHeaderSearchBox {
   width: 100%;
 
 }
-header #headerSearchBox form {
+header #portalBurgerNav {
+  position: relative;
+  width:36px;
+  height:28px;
+}
+
+header #portalBurgerNav .bm-burger-button {
+  width: 20px;
+  height: 16px;
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 10px;
+  
+}
+
+header #portalBurgerNav .bm-menu-wrap {
+  left:0;
+  top:0;
+}
+
+header #portalBurgerNav .bm-menu  {
+  left:0;
+  top:0;
+  padding:100px;
+  background-color: #FFF;
+}
+header #portalBurgerNav .bm-menu .bm-item.menu-item {
+  
+}
+header #portalBurgerNav .bm-cross {
+  background-color: var(--content-text-color);
+}
+
+header #portalBurgerNav .bm-overlay {
+  left:0;
+  top:0;
+}
+
+
+header #portalBurgerNav .bm-burger-button #react-burger-menu-btn {
+}
+.bm-burger-bars  {
+  background: var(--logo-color);
+}
+
+header #portalHeaderSearchBox form {
   display: flex;
 }
-header #headerSearchBox form #terms {
+header #portalHeaderSearchBox form #terms {
   width: calc(100% - 100px);
   border:2px solid #222;
   border-radius: 24px 0 0 24px;
@@ -99,7 +147,7 @@ header #headerSearchBox form #terms {
   height:22px;
 }
 
-header #headerSearchBox form #submit-search {
+header #portalHeaderSearchBox form #submit-search {
   background-color:var( --logo-color);
   height:48px;
   width:100px;
@@ -112,7 +160,7 @@ header #headerSearchBox form #submit-search {
   margin:0;
 
 }
-header #headerSearchBox form #submit-search svg {
+header #portalHeaderSearchBox form #submit-search svg {
   height:24px;
 
 }
@@ -138,6 +186,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 a {
   color:var(--content-text-color);
+  text-decoration: none;
 
 }
 a:visited{
@@ -179,18 +228,7 @@ a:visited{
     pointer-events: none;
     background: linear-gradient(to left, white, transparent);
 }
-/*
-.product-card-list-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 50px;
-    pointer-events: none;
-    background: linear-gradient(to right, white, transparent);
-}
-*/
+
   .product-card-list::-webkit-scrollbar {
     display: none;
   }
@@ -202,6 +240,7 @@ a:visited{
     border:1px solid transparent;
     padding:6px;
     border-radius:12px;
+    text-decoration: none;
   }
 
   .product-card-list li .product-card:hover {
@@ -233,26 +272,33 @@ a:visited{
     border:1px solid #eee;
     margin:auto;
   }
-  .product-card-list li .product-card .product-name{
+  .product-card-list li .product-card .display-name{
     display: block;
     width: 100%;
     overflow-x: hidden;
     text-overflow: ellipsis;
   }
 
-  
-  
-
-  .product-card-list li .product-card .display-price{
+  .product-card .display-price{
     font-weight:500;
-    color:green;
+    color:var(--price-color);
+    text-decoration:none;
   }
 
-  .product-card-list li .product-card .location{
-    color:#999;
+  .product-card .location{
+    text-decoration:none;
+    color:var(--location-color);
+    font-weight: 500;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: var(--content-font-size);
   }
 
- 
+  .product-card .display-name{
+    text-decoration:underline;
+    display: block;
+    padding:5px 0px;
+  }
 
   .product-card-list[data-index="1"] {
     display: grid;
@@ -350,3 +396,51 @@ a:visited{
   .article-list a{
     text-decoration:none;
   }
+
+  body.single-product {
+    font-size:var( --content-font-size);
+  }
+
+  body.single-product h1 {
+    max-width:var(--product-content-width);
+    margin:auto;
+    padding-bottom: var(--content-padding);
+    padding-top: var(--content-padding);
+    font-size: 2.2em;
+    line-height: 1.2em;
+  }
+  body.single-product #content {
+    max-width:var(--product-content-width);
+    margin:auto;
+    padding-bottom: var(--content-padding);
+    padding-top: var(--content-padding);
+  }
+
+  body.single-product .product-card {
+    max-width:var(--product-content-width);
+    margin: auto;
+    padding: var(--content-padding);
+    width: calc(100% - 36px);
+    display: block;
+  }
+  
+  body.single-product .product-card img{
+    width: 100%;
+    max-width: 800px;
+    object-fit:cover;
+    grid-column: 1; /* First column */
+    grid-row: 1;    /* First row */
+  }
+
+ 
+
+  body.single-product .product-card  section {
+    grid-column: 2; /* Second column */
+    grid-row: 1;    /* First row */
+  }
+  
+  body.single-producti .product-text {
+    grid-column: 1 / span 2; /* Spans across both columns */
+    grid-row: 2;             /* Second row */
+  }
+

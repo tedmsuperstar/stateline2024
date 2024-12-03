@@ -13,6 +13,7 @@
         
         ?>
         <li>
+        <a title="<?=get_field('name',$product)?>" href="<?=get_field('url',$product)?>">
             <article class="product-card">
                 
                 <div><img <?php if($counter > 1){?>loading="lazy"<?php }?> alt="<?=get_field('name',$product)?>"
@@ -20,14 +21,17 @@
                         src="<?=get_field('image2x',$product)?>"></div>
                 <section>
                     <div>
-                        <h2><?=get_field('display_location',$product)?></h2><a title="<?=get_field('name',$product)?>" href="<?=get_field('url',$product)?>"><span><?=get_field('name',$product)?></span></a>
+                        <h2 class="location"><?=get_field('display_location',$product)?></h2>
+                        <span  class="display-name"><?=get_field('name',$product)?></span>
                     </div>
                     <div >
-                        <span className="display-price"><?=get_field('display_price',$product)?></span>
+                        <span class="display-price"><?=get_field('display_price',$product)?></span>
                     </div>
                 </section>
-                <div class="product-text"><?=$product_text?></div>
+                
             </article>
+            </a>
+            <div class="product-text"><?=$product_text?></div>
         </li>
     <?php 
     $counter++;

@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Listicle Template
+ * Template Name: Product
  *
- * Template for a list of products
+ * Template for a product
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -38,7 +38,7 @@ if($cached_post && !isset($page_query["preview"])){
 			 * use this in a child theme, then include a file called called content-___.php
 			 * (where ___ is the post format) and that will be used instead.
 			 */
-			get_template_part( 'parts/content-listicle', get_post_format() );	
+			get_template_part( 'parts/content-product', get_post_format() );	
 		endwhile;
 	?>
 	<div class="clearfix"></div>

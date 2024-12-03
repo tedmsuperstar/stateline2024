@@ -33,8 +33,10 @@
 <body <?php body_class(); ?>>
 <header>
 	<div class="nav-chrome">
-    <a class = "logo" href="/">State Line</a>
-    <div id="headerSearchBox"></div>
+  <a class = "logo" href="/">State Line</a>
+  <div id="portalBurgerNav"></div>
+    
+    <div id="portalHeaderSearchBox"></div>
   </div>
 	<?php
 	
